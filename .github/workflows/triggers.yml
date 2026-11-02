@@ -1,0 +1,26 @@
+name: GitHub Actions Triggers
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  trigger-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display message
+        run: echo "GitHub Actions workflow triggered successfully"
+
+      - name: Show event
+        run: echo "Event name is $GITHUB_EVENT_NAME"
