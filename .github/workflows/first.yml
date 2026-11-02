@@ -1,0 +1,21 @@
+name: My First GitHub Actions
+
+on:
+  push:
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print welcome message
+        run: echo "Welcome to GitHub Actions"
+
+      - name: Show current directory
+        run: pwd
+
+      - name: Display files
+        run: ls -la
+
+      - name: Show date
+        run: date
